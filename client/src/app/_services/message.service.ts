@@ -25,7 +25,7 @@ export class MessageService {
 
   createHubConnection(user: User, otherUsername: string) {
     this.hubConnection = new HubConnectionBuilder()
-    .withUrl(this.hubUrl + 'message?user=0' + otherUsername, {
+    .withUrl(this.hubUrl + 'message?user=' + otherUsername, {
       accessTokenFactory: () => user.token
     })
     .withAutomaticReconnect()
